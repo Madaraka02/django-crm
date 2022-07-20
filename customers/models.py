@@ -13,7 +13,7 @@ class Client(models.Model):
     email = models.EmailField(max_length=300, null=True, blank=True)
     slug = AutoSlugField(populate_from='username')
     age = models.IntegerField(default=1, null=True, blank=True)
-    description = models.TextField(null=True)
+    # description = models.TextField(null=True)
     date_added = models.DateTimeField(auto_now_add=True)
     phone_number = PhoneNumberField(blank=True, null=True)
 
