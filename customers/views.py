@@ -44,3 +44,8 @@ def update(request, id):
     }       
     return render(request, 'updateclient.html', context)    
 
+def delete(request, id):
+    client = get_object_or_404(Client, id=id)
+    client.delete()
+    return redirect('home')
+

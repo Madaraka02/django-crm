@@ -8,10 +8,13 @@
     <div class="row mt-4 mb-4">
         <div class="col-md-2 mt-4 mb-4"></div>
         <div class="col-md-8 mt-4 mb-4">
+            <h6 class="mt-2 mb-2 justify-content-between">
             All clients Table
+            <span class="float-end mt-2 mb-2">
             <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
                 Add new client
-            </button>
+            </button></span>
+        `   </h6>
             <table class="table align-middle mb-0 bg-white mt-2 mb-2">
                 <thead class="bg-light">
                   <tr>
@@ -46,9 +49,9 @@
                       </a>
                     </td>
                     <td>
-                        <button type="button" class="btn btn-link btn-sm btn-rounded">
-                          Delete
-                        </button>
+                        <a href="{% url 'delete' client.id%}" type="button" class="btn btn-outline-danger btn-sm btn-rounded">
+                            Delete
+                          </a>
                       </td>
                   </tr>
                   {% endfor %}
