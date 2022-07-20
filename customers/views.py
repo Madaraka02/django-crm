@@ -29,3 +29,18 @@ def home(request):
     }    
     return render(request, 'clientspage.html', context)    
 
+def update(request, id):
+    client = get_object_or_404(Client, id=id)
+    form = ClientForm(instance=client)
+    if request.method == 'POST':
+        form = ClientForm(request.POST,instance=client)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+
+    context ={
+        'client':client,
+        'form':form
+    }       
+    return render(request, 'updateclient.html', context)    
+
